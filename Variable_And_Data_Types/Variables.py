@@ -32,6 +32,31 @@ print(name.replace('a','o')) #replaces substring
 print(name.split(' ')) #split string into list
 print(name.isdigit()) #check if all characters are digits
 print(name.isalpha()) #check if all characters are letters
+print('-'.join(name.split(' ')))
 
+
+# White Space in Python
+# white space include spaces tabs \t  Newlines \n
+
+name = 'Alice '
+print(name + ' in wonder land.')
+
+print('To do list:\n\t1.Eat\n\t2.Sleep\n\t3.Repeat')
+
+stripping_white_space = '   hello   '
+print(stripping_white_space.rstrip())
+print(stripping_white_space.lstrip())
+print(stripping_white_space.strip())
+
+#In Python, to remove a preflix from a string you can use 'removeprefix('string')' method
+#What is prefix and surfix?
+#Prefix is a part of string that appear at the beginning.
+#Surfix is a part of string that appear at the end.
+
+my_prefix = "https://google.com"
+my_extension = "myBook.pdf"
+
+print(my_prefix.removeprefix('https://'))
+print(my_extension.removesuffix('.pdf'))
 
 
