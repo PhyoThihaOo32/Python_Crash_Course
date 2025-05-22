@@ -49,14 +49,14 @@ print(stripping_white_space.lstrip())
 print(stripping_white_space.strip())
 
 #In Python, to remove a preflix from a string you can use 'removeprefix('string')' method
-#What is prefix and surfix?
+#What is prefix and suffix?
 #Prefix is a part of string that appear at the beginning.
-#Surfix is a part of string that appear at the end.
+#Suffix is a part of string that appear at the end.
 
 my_prefix = "https://google.com"
 my_extension = "myBook.pdf"
 
-print(my_prefix.removeprefix('https://'))
-print(my_extension.removesuffix('.pdf'))
+print(my_prefix.removeprefix('https://'))        #startwith('string') method
+print(my_extension.removesuffix('.pdf'))         #endwith('string') method
 
 
