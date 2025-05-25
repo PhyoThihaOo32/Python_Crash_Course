@@ -75,9 +75,4 @@ else:
     print('Invalid')
 
 
-# favorite fruite program
 
-favorite_fruits = ['durian', 'rambutan', 'salak', 'longan', 'miracle fruit']
-
-for fruit in favorite_fruits:
-    print(f'You really like {fruit}')
