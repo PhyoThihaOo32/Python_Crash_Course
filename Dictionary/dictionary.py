@@ -45,3 +45,29 @@ users = {
 }
 
 print(users['alice']['email'])
+
+
+# TryItYourself Rivers:
+
+river_dict = {
+    'nile': 'egypt',
+    'amazon': 'brazil',
+    'yangtze': 'china',
+    'mississippi': 'united states',
+    'ganges': 'india',
+    'thames': 'united kingdom',
+    'seine': 'france',
+    'colorado': 'united states'
+}
+
+for river, country in river_dict.items():
+    print(f'{river.title()} runs through {country.title()}')
+
+print('List of rivers in my dictionary: ')
+for index, river in enumerate(river_dict.keys(),start=1):
+    print(f'{index}: {river}')
+
+print('List of country in my dictionary: ')
+for index, country in enumerate(sorted(set(river_dict.values()))):
+    print(f'{index}: {country.title()}')
+                                
