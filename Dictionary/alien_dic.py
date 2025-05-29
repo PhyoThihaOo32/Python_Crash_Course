@@ -36,7 +36,7 @@ inventory = {
 
 inventory['apple'] -= 5
 inventory['banana'] +=10
-inventory.pop('mango')
+inventory.pop('mango') # pop method to popped out the key and values associated with the key
 inventory['lemon'] = 60
 
 print(inventory)
