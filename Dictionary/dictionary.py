@@ -23,7 +23,7 @@ print(user.get('address','Address is not avaliable'))
 
 user["email"] = "alice25@gmail.com"
 user["age"] = 28
-user.update({"age": 18})
+user.update({"age": 18})  # using update method 
 
 
 # Looping through Dictionary:
