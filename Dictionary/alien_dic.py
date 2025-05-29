@@ -11,9 +11,9 @@ alien_dic = {
     'speed': ['slow','medium','fast']
 }
 
-red_alien = alien_dic['color'][1]
+red_alien = alien_dic['color'][2]
 print(f' you shoot down the {red_alien} alien')
-red_alien_point = alien_dic['point'][1]
+red_alien_point = alien_dic['point'][2]
 print(f' you got {red_alien_point} points!')
 
 
