@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # List is an ordered, mutable collection of items. 
 # List can hold elements of any type: numbers, strings, boolean, even other lists.
 
@@ -43,9 +43,6 @@ print(len(fruit_list))
 
 # print(want_to_avoid)
 
-
-=======
->>>>>>> a2cf014183be21078fab18b58be316c6325d2ade
 # organizing the list
 
 list = ['toyota','kia','bmw','acura']
