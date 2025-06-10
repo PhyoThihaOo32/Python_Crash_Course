@@ -17,3 +17,7 @@ def greet_user(**kwargs):
         print(f'{key}: {value}')
 
 greet_user(name="Alice", age=25, city="New York")
+
+
+# *args must come before **kwargs in a function definition.
+

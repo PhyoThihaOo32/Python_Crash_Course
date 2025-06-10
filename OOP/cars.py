@@ -49,12 +49,22 @@ class EVBattery:
 
     def describe_battery(self):
         print(f"Battery Type: {self.battery_type}")
-        print(f"Capacity: {self.capacity_kwh} kWh")
+        print(f"Capacity (Default): {self.capacity_kwh} kWh")
         print(f"Voltage: {self.voltage} V")
 
-    def estimate_range(self, capacity_kwh=60):
+    def upgrade_battery(self, capacity_kwh=None):
+        if capacity_kwh is None:
+            try: 
+                capacity_kwh = int(input('Set new capacity_kwh: '))
+            except ValueError:
+                print('Invalid input. Upgrade cancelled.')
+                return
+        self.capacity_kwh = capacity_kwh
+        print(f'Upgraded battery capacity: {self.capacity_kwh}')
+
+    def estimate_range(self):
         # Basic mock estimation: 5 km per kWh
-        self.estimated_range = capacity_kwh * 5
+        self.estimated_range = self.capacity_kwh * 5
         print(f"Estimated Range: {self.estimated_range} km")
 
 class ElectricCar(Car):
@@ -82,6 +92,8 @@ my_tesla.describe_car()
 my_tesla.describe_battery()
 my_tesla.check_number_of_electric_car_made()
 my_tesla.battery_type.describe_battery()
+my_tesla.battery_type.estimate_range()
+my_tesla.battery_type.upgrade_battery()
 my_tesla.battery_type.estimate_range()
 
 # call only the parent version of charging()
