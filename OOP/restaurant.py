@@ -1,19 +1,45 @@
 class Restaurant:
-    def  __init__(self, resturant_name, cuisine_type):
-        self.resturant_name = resturant_name
+    def __init__(self, restaurant_name, cuisine_type, max_capacity=100):
+        self.restaurant_name = restaurant_name
         self.cuisine_type = cuisine_type
+        self.number_served = 0
+        self.max_capacity = max_capacity
 
-    def describe_resturant(self):
-        print(f'Name of resturant: {self.resturant_name}')
-        print(f'Cuisine type: {self.cuisine_type}')
+    def describe_restaurant(self):
+        print(f"Name of restaurant: {self.restaurant_name}")
+        print(f"Cuisine type: {self.cuisine_type}")
 
-    def open_resturant(self):
-        print(f'{self.resturant_name} is now open!')
+    def open_restaurant(self):
+        print(f"{self.restaurant_name} is now open!")
 
-my_resturant = Restaurant('Mandalay', 'Burmese Foods')
+    def set_number_served(self, current_number_served):
+        if current_number_served < 0:
+            print("Negative input not accepted.")
+            return
+        elif current_number_served > self.max_capacity:
+            print(f"We can only serve up to {self.max_capacity} people at once. Setting to max capacity.")
+            self.number_served = self.max_capacity
+        else:
+            self.number_served = current_number_served
+        print(f"We are currently serving {self.number_served} customers.")
 
-print(my_resturant.resturant_name)
-print(my_resturant.cuisine_type)
+    def increase_number_served(self, additional_customers):
+        if additional_customers < 0:
+            print("We don't accept negative values.")
+        elif self.number_served + additional_customers > self.max_capacity:
+            print(f"Cannot exceed max capacity of {self.max_capacity}. Serving up to max capacity.")
+            self.number_served = self.max_capacity
+        else:
+            self.number_served += additional_customers
+        print(f"Updated number served: {self.number_served}")
 
-my_resturant.describe_resturant()
-my_resturant.open_resturant()
+
+my_restaurant = Restaurant('Mandalay', 'Burmese Foods')
+
+print(my_restaurant.restaurant_name)
+print(my_restaurant.cuisine_type)
+
+my_restaurant.describe_restaurant()
+my_restaurant.open_restaurant()
+my_restaurant.set_number_served(40)
+my_restaurant.increase_number_served(90)
