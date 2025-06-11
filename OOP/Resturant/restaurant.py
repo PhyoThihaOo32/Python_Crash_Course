@@ -34,17 +34,3 @@ class Restaurant:
         print(f"Updated number served: {self.number_served}")
 
 
-class IceCreamStand(Restaurant):
-    
-    def __init__(self, restaurant_name, cuisine_type, max_capacity=20, *flavours):
-        super().__init__(restaurant_name, cuisine_type, max_capacity=20)
-        self.flavours = flavours
-
-    def show_flavours(self):
-        for index, flavour in enumerate(self.flavours, start=1):
-            print(f'{index}: {flavour}')
-
-icecream_stand = IceCreamStand('Sweet Scoops', 'Ice Cream', 100, 'Vanilla', 'Chocolate', 'Strawberry', 'Mint', 'Mango')
-icecream_stand.show_flavours()
-icecream_stand.describe_restaurant()
-icecream_stand.set_number_served(200)
