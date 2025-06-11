@@ -34,6 +34,7 @@ class Restaurant:
         print(f"Updated number served: {self.number_served}")
 
 
+<<<<<<< HEAD:OOP/restaurant.py
 class IceCreamStand(Restaurant):
     
     def __init__(self, restaurant_name, cuisine_type, max_capacity=20, *flavours):
@@ -49,3 +50,5 @@ icecream_stand.show_flavours()
 icecream_stand.describe_restaurant()
 icecream_stand.set_number_served(200)
 
+=======
+>>>>>>> c43e0f2091f640c1fa4cf4a2cb7df8ea42e08665:OOP/Resturant/restaurant.py
