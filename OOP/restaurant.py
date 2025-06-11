@@ -48,3 +48,4 @@ icecream_stand = IceCreamStand('Sweet Scoops', 'Ice Cream', 100, 'Vanilla', 'Cho
 icecream_stand.show_flavours()
 icecream_stand.describe_restaurant()
 icecream_stand.set_number_served(200)
+
