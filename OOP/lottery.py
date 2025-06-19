@@ -7,14 +7,13 @@ class Lottery:
 
     def generate_winning_ticket(self):
         self.winning_ticket = [random.randint(0, 9) for _ in range(4)]
-        print(f'Winning Ticket: {self.winning_ticket}')
 
     def randomly_generate_player_ticket(self):
         self.player_ticket = [random.randint(0, 9) for _ in range(4)]
-        print(f'Your random ticket: {self.player_ticket}')
+        print(f'🎟️ Your random ticket: {self.player_ticket}')
 
     def user_manually_generate_ticket(self):
-        print('Enter 4 digits (0-9) for your lottery ticket:')
+        print('📝 Enter 4 digits (0-9) for your lottery ticket:')
         self.player_ticket = []
         for i in range(4):
             while True:
@@ -24,26 +23,33 @@ class Lottery:
                         self.player_ticket.append(num)
                         break
                     else:
-                        print('Please enter a digit between 0 and 9.')
+                        print('⚠️ Please enter a digit between 0 and 9.')
                 except ValueError:
-                    print('Please enter a valid number.')
+                    print('⚠️ Please enter a valid number.')
 
     def check_ticket(self):
         if self.player_ticket == self.winning_ticket:
             print("🎉 Congratulations! You won the lottery!")
         else:
             print("😢 Better luck next time.")
-            self.generate_winning_ticket()
-            
+        print(f'🎯 Winning Ticket: {self.winning_ticket}')
+
 
 # ==== MAIN PROGRAM ====
 my_lottery = Lottery()
 
-choice = input("Do you want to pick numbers yourself? (y/n): ").lower()
+while True:
+    print("\n🎲 New Round Starting...")
+    my_lottery.generate_winning_ticket()
 
-if choice == 'y':
-    my_lottery.user_manually_generate_ticket()
-else:
-    my_lottery.randomly_generate_player_ticket()
+    choice = input("Do you want to pick numbers yourself? (y/n): (Enter q to quit) ").lower()
+    if choice == 'q':
+        print('👋 Thanks for playing. Happy Lottery Day!')
+        break
+    elif choice == 'y':
+        my_lottery.user_manually_generate_ticket()
+    else:
+        my_lottery.randomly_generate_player_ticket()
 
-my_lottery.check_ticket()
+    my_lottery.check_ticket()
+    print('-' * 40)
